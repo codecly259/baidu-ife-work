@@ -12,4 +12,19 @@
    }
 ```
 
-## 
+
+//TODO
+## text-indent
+## text-transform
+## text-decoration
+## text-align
+## word-spacing
+## white-space
+## color
+## line-height
+## font
+## font-family
+## font-size
+## font-weight
+## font-face
+
