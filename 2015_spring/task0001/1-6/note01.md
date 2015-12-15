@@ -8,8 +8,8 @@
 
 ```css
   p {
-     text-indent:50px;
-   }
+    text-indent:50px;
+  }
 ```
 
 
