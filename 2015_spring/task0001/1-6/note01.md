@@ -14,7 +14,6 @@
 
 
 //TODO
-## text-indent
 ## text-transform
 ## text-decoration
 ## text-align
