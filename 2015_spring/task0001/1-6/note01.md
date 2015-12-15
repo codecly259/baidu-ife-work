@@ -15,6 +15,14 @@
 
 //TODO
 ## text-transform
+
+- 定义 : `text-transform`属性控制文本（ 英文）的大小写。
+- 说明 : 这个属性会改变元素中的字母大小写，而不论源文档中文本的大小写。如果值为 `capitalize`，则要对某些字母大写，但是并没有明确定义如何确定哪些字母要大写，这取决于用户代理如何识别出各个“词”。
+- 可能的值
+
+
+
+
 ## text-decoration
 ## text-align
 ## word-spacing
