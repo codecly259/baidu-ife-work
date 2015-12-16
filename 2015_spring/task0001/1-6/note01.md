@@ -30,6 +30,7 @@ h1 {text-transform:uppercase}
 h2 {text-transform:capitalize}
 p {text-transform:lowercase}
 ```
+
 ## text-decoration
 - 定义 : `text-decoration` 属性规定添加到文本的修饰。
 - 注释 : 修饰的颜色由`color`属性设置。
@@ -37,16 +38,44 @@ p {text-transform:lowercase}
 - 浏览器支持 : 所有主流浏览器都支持 text-decoration 属性。IE不支持属性值`inherit`。IE、Chrome、Safari不支持`blink`属性值
 - 可能的值 : 
 
-|值|描述
-|------|-----------
-|none|默认。定义标准的文本。
-|underline|定义文本下的一条线（上划线）。
-|overline|定义文本上的一条线（下划线）。
-|line-through|定义穿过文本的一条线（删除线）。
-|blink|定义闪烁的文本。
-|inherit|规定应该从父元素继承`text-decoration`属性的值。
+	|值|描述
+	|------|-----------
+	|none|默认。定义标准的文本。
+	|underline|定义文本下的一条线（上划线）。
+	|overline|定义文本上的一条线（下划线）。
+	|line-through|定义穿过文本的一条线（删除线）。
+	|blink|定义闪烁的文本。
+	|inherit|规定应该从父元素继承`text-decoration`属性的值。
+
+- 实例：设置h1、h2、h3、h4元素的文本修饰
+	```css
+	h1 {text-decoration:overline}
+	h2 {text-decoration:line-through}
+	h3 {text-decoration:underline}
+	h4 {text-decoration:blink}
+	```
 
 ## text-align
+- 定义和用法：`text-align`属性规定元素中的文本的水平对齐方式。该属性通过指定行框与哪个点对齐，从而设置块级元素内文本的水平对齐方式。通过允许用户代理调整行内容中字母和字之间的间隔，可以支持值`justify`；不同用户代理可能会得到不同的结果。
+- 浏览器支持：所有浏览器都支持`text-align`属性。IE8不支持属性值`inherit`。
+- 可能的值
+
+	|值|描述
+	|------|------------
+	|left | 把文本排列到左边。默认值：由浏览器决定。
+	|right | 把文本排列到右边。
+	|center | 把文本排列到中间。
+	|justify | 实现两端对齐文本效果。
+	|inherit | 规定应该从父元素继承`text-align`属性的值。 
+
+- 实例：设置h1、h2、h3元素的文本对齐方式
+	```css
+	h1 {text-align:center}
+	h2 {text-align:left}
+	h3 {text-align:right}
+	```
+
+
 ## word-spacing
 ## white-space
 ## color
