@@ -261,7 +261,83 @@
 
 
 ## font-weight
-- 定义：font-weight 属性设置文本的粗细。
+- 定义：`font-weight` 属性设置文本的粗细。
+- 说明：该属性用于设置显示元素的文本中所用的字体加粗。数字值 400 相当于 关键字 `normal`，700 等价于 `bold`。每个数字值对应的字体加粗必须至少与下一个最小数字一样细，而且至少与下一个最大数字一样粗。
+- 可能的值：
+
+	|值 | 描述
+	|------|------------
+	|normal | 默认值。定义标准的字符。
+	|bold | 定义粗体字符。
+	|bolder | 定义更粗的字符。
+	|lighter | 定义更细的字符。
+	|100<br>200<br>300<br>400<br>500<br>600<br>700<br>800<br>900 | 定义由粗到细的字符。<br> 400等同于normal，700等同于bold。
+	|inherit | 规定应该从父元素继承字体的粗细。
+
+- 实例：设置三个段落的字体的粗细
+
+	```css
+	p.normal {font-weight:normal;}
+	p.thick {font-weight:bold;}
+	p.thicker {font-weight:900;}
+	```
+
 
 ## font-face
+- **CSS3 `@font-face` 规则** <br> 在 CSS3 之前，web 设计师必须使用已在用户计算机上安装好的字体。<br>
+通过 CSS3，web 设计师可以使用他们喜欢的任意字体。<br>
+当找到或购买到希望使用的字体时，可将该字体文件存放到 web 服务器上，它会在需要时被自动下载到用户的计算机上。<br>
+我们“自己的”的字体是在 CSS3 `@font-face` 规则中定义的。
+- 浏览器支持：<br>
+Firefox、Chrome、Safari 以及 Opera 支持 .ttf (True Type Fonts) 和 .otf (OpenType Fonts) 类型的字体。<br>
+Internet Explorer 9+ 支持新的 @font-face 规则，但是仅支持 .eot 类型的字体 (Embedded OpenType)。<br>
+**注释**：Internet Explorer 8 以及更早的版本不支持新的 @font-face 规则。
+- **使用需要的字体** <br>
+在新的 @font-face 规则中，您必须首先定义字体的名称（比如 myFirstFont），然后指向该字体文件。<br>
+如需为 HTML 元素使用字体，请通过 font-family 属性来引用字体的名称 (myFirstFont)：<br>
+**实例**
+	
+	```html
+	<style> 
+	@font-face
+	{
+	font-family: myFirstFont;
+	src: url('Sansation_Light.ttf'),
+	     url('Sansation_Light.eot'); /* IE9+ */
+	}
+	
+	div
+	{
+	font-family:myFirstFont;
+	}
+	</style>
+	```
 
+- **使用粗体字体** <br>
+必须为粗体文本添加另一个包含描述符的 `@font-face`：<br>
+**实例**
+
+	```css
+	@font-face
+	{
+	font-family: myFirstFont;
+	src: url('Sansation_Bold.ttf'),
+	     url('Sansation_Bold.eot'); /* IE9+ */
+	font-weight:bold;
+	}
+	```
+文件 "Sansation_Bold.ttf" 是另一个字体文件，它包含了 Sansation 字体的粗体字符。<br>
+只要 font-family 为 "myFirstFont" 的文本需要显示为粗体，浏览器就会使用该字体。<br>
+通过这种方式，我们可以为相同的字体设置许多 `@font-face` 规则。
+
+- **css字符描述符**<br>
+下面的表格列出了能够在 @font-face 规则中定义的所有字体描述符：
+
+	|描述符 | 值 | 描述
+	|------|------|------------
+	|font-family | *name* | 必须。规定字体的名称。
+	|src | *URL* |必须。定义字体文件的URL。
+	|font-stretch | normal<br>condensed<br>ultra-condensed<br>extra-condensed<br>semi-condensed<br>expanded<br>semi-expanded<br>extra-expanded<br>ultra-expanded | 可选。定义如何拉伸字体。<br>默认是`normal`。
+	|font-style | ormal<br>italic<br>oblique | 可选。定义字体的样式。<br>默认是`normal`。
+	|font-weight | normal<br>bold<br>100<br>200<br>300<br>400<br>500<br>600<br>700<br>800<br>900 | 可选。定义字体的粗细。<br> 默认是`normal`。
+	|unicode-range | *unicode-range* | 可选。定义字体支持的UNICODE字符范围。默认是“U+0-10FFFF”。
