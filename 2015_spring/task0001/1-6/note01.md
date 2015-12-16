@@ -26,12 +26,20 @@
 	|lowercase | 定义仅有小写字母。
 	|inherit | 规定应该从父元素继承`text-transform`属性的值。
 - 实例：转换不同元素中的文本
+<<<<<<< HEAD
 
 	```css
 	h1 {text-transform:uppercase}
 	h2 {text-transform:capitalize}
 	p {text-transform:lowercase}
 	```
+=======
+```css
+h1 {text-transform:uppercase}
+h2 {text-transform:capitalize}
+p {text-transform:lowercase}
+```
+>>>>>>> 7aafd96f742f516bf412188e0a2797c8c4bb08bf
 
 ## text-decoration
 - 定义 : `text-decoration` 属性规定添加到文本的修饰。
@@ -50,7 +58,10 @@
 	|inherit|规定应该从父元素继承`text-decoration`属性的值。
 
 - 实例：设置h1、h2、h3、h4元素的文本修饰
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7aafd96f742f516bf412188e0a2797c8c4bb08bf
 	```css
 	h1 {text-decoration:overline}
 	h2 {text-decoration:line-through}
@@ -72,7 +83,10 @@
 	|inherit | 规定应该从父元素继承`text-align`属性的值。 
 
 - 实例：设置h1、h2、h3元素的文本对齐方式
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7aafd96f742f516bf412188e0a2797c8c4bb08bf
 	```css
 	h1 {text-align:center}
 	h2 {text-align:left}
