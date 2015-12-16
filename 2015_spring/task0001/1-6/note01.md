@@ -1,7 +1,11 @@
 # 标记笔记
 
 # 目录
+<<<<<<< HEAD
 1. [text-indent](#text-indent)
+=======
+1. [text-indent](#text-indext)
+>>>>>>> 1d028455c1606504060b991146a829759f0e6a11
 2. [text-transform](#text-transform)
 3. [text-decoration](#text-decoration)
 4. [text-align](#text-align)
@@ -15,8 +19,11 @@
 12. [font-weight](#font-weight)
 13. [font-face](#font-face)
 
+<<<<<<< HEAD
 # 内容
 
+=======
+>>>>>>> 1d028455c1606504060b991146a829759f0e6a11
 ## text-indent
 
 - 定义 : `text-indent`属性规定文本块中首行文本的缩进。
