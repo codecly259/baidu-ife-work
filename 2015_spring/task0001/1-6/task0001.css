@@ -1,14 +1,27 @@
+@font-face {
+	font-family: tangyuan;
+	src: url('冬天的汤圆.ttf')
+}
+
 h1 {
 	color:blue;
 }
 
 h2 {
 	font-size: 14px;
+	text-decoration:underline;
+	font:italic bold 12px/20px arial,sans-serif;
 }
 
 p {
-	font-size: 12px;
+	font-family: tangyuan;
+	font-size: 18px;
+	text-align:left;
+	word-spacing:15px;
+	white-space:pre-wrap;
+	line-height:1.5;
 	text-indent: 20px;
+	text-transform: capitalize;
 	color:yellow;
 	background-color: black;
 }
