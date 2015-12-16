@@ -1,9 +1,22 @@
 # 标记笔记
 
 # 目录
-1. [text-indent](##text-indext)
-2. [text-transform](##text-transform)
-3. [text-decoration](##text-decoration)
+1. [text-indent](#text-indent)
+2. [text-transform](#text-transform)
+3. [text-decoration](#text-decoration)
+4. [text-align](#text-align)
+5. [word-spacing](#word-spacing)
+6. [white-space](#white-space)
+7. [color](#color)
+8. [line-height](#line-height)
+9. [font](#font)
+10. [font-family](#font-family)
+11. [font-size](#font-size)
+12. [font-weight](#font-weight)
+13. [font-face](#font-face)
+
+# 内容
+
 ## text-indent
 
 - 定义 : `text-indent`属性规定文本块中首行文本的缩进。
