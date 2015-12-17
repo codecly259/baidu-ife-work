@@ -3,6 +3,7 @@
 	src: url('冬天的汤圆.ttf')
 }
 
+
 h1 {
 	color:blue;
 }
@@ -28,4 +29,19 @@ p {
 
 img {
 	border:2px solid red;
+}
+
+#first_center_div {
+	background-color:red;
+	width:960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#second_center_div {
+	background:red;
+	width:960px;
+	position:absolute;
+	left:(body.clientWidth-960)/2;
+	
 }
