@@ -31,17 +31,149 @@ img {
 	border:2px solid red;
 }
 
-#first_center_div {
+.div1 {
 	background-color:red;
-	width:960px;
-	margin-left: auto;
-	margin-right: auto;
+	max-width:960px;
+	margin: 10px auto;
 }
 
-#second_center_div {
+.div2 {
+	margin-bottom:10px;
+	text-align:center;
+}
+
+.div2in {
 	background:red;
 	width:960px;
-	position:absolute;
-	left:(body.clientWidth-960)/2;
+	display:inline-block;
+	text-align:left;
 	
 }
+
+/* 两列布局两种方法*/
+.div4 {
+	margin:20px 0;
+}
+
+.div4-a {
+	float:left;
+	width:100px;
+	height:100px;
+	background:red;
+}
+
+.div4-b {
+	margin-left:100px;
+	height:100px;
+	background:blue;
+}
+
+.div4-c {
+	clear:left;
+	background:yellow;
+	height:100px;
+	width:100%;
+}
+
+.div5 {
+	margin-bottom:20px;
+	position:relative;
+}
+
+.div5-a {
+	position:absolute;
+	left:0px;
+	width:100px;
+	height:100px;
+	background:red;
+}
+
+.div5-b {
+	height:100px;
+	margin-left:100px;
+	background:blue;
+}
+
+.div5-c {
+	height:100px;div7-b
+	width:100%;
+	background:yellow;
+}
+
+/* 三列布局两种方法 */
+.div6 {
+	margin-bottom:20px;
+	position:relative;
+}
+.div6-a {
+	float:left;
+	height:100px;
+	width:100px;
+	background:red;
+}
+.div6-b {
+	height:100px;
+	margin:0px 100px;
+	background:blue;
+}
+.div6-c {
+	/* 这个方法没有成功 */
+	/* 
+	float:right;
+	height:100px;
+	width:100px;
+	background:yellow;*/
+	position:absolute;
+	right:0px;
+	top:0px;
+	height:100px;
+	width:100px;
+	background:yellow;
+}
+
+.div7 {
+	clear:both;
+	position:relative;
+	margin-bottom:20px;
+}
+.div7-a {
+	position:absolute;
+	left:0px;
+	width:100px;
+	height:100px;
+	background:red;
+}
+.div7-b {
+	height:100px;
+	margin:0px 100px;
+	background:blue;
+}
+.div7-c {
+	position:absolute;
+	right:0px;
+	top:0px;
+	height:100px;
+	width:100px;
+	background:yellow;
+}
+
+/* 浮动布局 */
+.div8 {
+	overflow: hidden;
+	margin-bottom:20px;
+	background:red;
+}
+.floatbox {
+	float:left;
+	margin:10px;
+	width:200px;
+	height:100px;
+	background:blue;
+	
+}
+
+
+
+
+
+
