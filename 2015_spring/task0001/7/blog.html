@@ -1,10 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>BLOG</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <div id="header">
+        <div class="center main-center">
+            <h1 class="font-hei"><a href="index.html">codecly259</a></h1>
+
+            <div class="nav font-song">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="blog.html">文章</a></li>
+                    <li><a href="gallery.html">作品</a></li>
+                    <li><a href="about.html">关于</a></li>
+                </ul>
+            </div>
+        </div>
+        <a class="git" href="http://github.com/codecly259">
+            <img src="./img/icon-github.png" alt="icon-github">
+        </a>
+    </div>
+
+    <div id="main-blog" class="clearfix main-center">
+        <!-- 左侧start -->
+        <div class="left">
+            <div class="blog clearfix">
+                <h2>HTML,CSS基础</h2>
+                <h3>百度前端技术学院笔记</h3>
+                <div class="article">
+                    <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文</p>
+                    <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文</p>
+                    <p>这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文</p>
+                    <p>这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文</p>
+                </div>
+                <div class="author">codecly259发表于 2015年12月18日</div>
+                <div class="side-card">
+                    <div class="date">12.18</div>
+                    <div class="cate">CSS</div>
+                </div>
+            </div>
+            <div class="blog clearfix">
+                <h2>这里是文正标题2</h2>
+                <h3>副标题</h3>
+                <div class="article">
+                    <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文</p>
+                    <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文</p>
+                    <p>这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文</p>
+                    <p>这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文</p>
+                </div>
+                <div class="author">codecly259发表于 2015年12月17日</div>
+                <div class="side-card">
+                    <div class="date">12.17</div>
+                    <div class="cate">CSS</div>
+                </div>
+            </div>
+            <div class="blog clearfix">
+                <h2>这里是文章标题3</h2>
+                <h3>副标题</h3>
+                <div class="article">
+                    <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文</p>
+                    <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文</p>
+                    <p>这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文</p>
+                    <p>这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文，这里是更多的正文</p>
+                </div>
+                <div class="author">codecly259发表于 2015年12月15日</div>
+                <div class="side-card">
+                    <div class="date">12.15</div>
+                    <div class="cate">CSS</div>
+                </div>
+            </div>
+            <!-- page -->
+            <div class="page">
+                <a href="javascript:;" class="disable">第一页</a>
+                <a href="javascript:;" class="disable">上一页</a>
+                <a href="javascript:;" class="curr">1</a>
+                <a href="javascript:;">2</a>
+                <a href="javascript:;">3</a>
+                <a href="javascript:;">4</a>
+                <a href="javascript:;">...</a>
+                <a href="javascript:;">下一页</a>
+                <a href="javascript:;">最后一页</a>
+            </div>
+        </div>
+
+        <div class="right">
+            <!-- search -->
+            <div id="search">
+                <form action="">
+                    <input class="text" type="text" value="keywords">
+                    <button>GO</button>
+                </form>
+            </div>
+            <!-- categories -->
+            <div class="cate">
+                <a href="javascript:;" class="first">HTML</a>
+                <a href="javascript:;" class="active">CSS</a>
+                <a href="javascript:;" class="third">JavaScript</a>
+                <a href="javascript:;">其他文章</a>
+            </div>
+            <!-- calender -->
+            <div class="calender">
+                <div class="year-month">
+                    <a class="year-month-left" href="javascript:;">&lt;</a>
+                    <span class="year-month-center">2015.12</span>
+                    <a class="year-month-right" href="javascript:;">&gt;</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>M</td>
+                            <td>T</td>
+                            <td>W</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>S</td>
+                            <td>S</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td class="today"><span>18</span></td>
+                            <td>19</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td class="festival"><span>25</span></td>
+                            <td>26</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Tags -->
+            <div class="tags font-hei">
+               <div class="tags-head">
+                    Tags
+               </div>
+                <div class="tags-body">
+                    <span class="lev1">JavaScript</span>
+                    <span class="lev2">CSS</span>
+                    <span class="lev5">flex</span>
+                    <span class="lev5">WebGL</span>
+                    <span class="lev1">HTML</span>
+                    <span class="lev4">Canvas</span>
+                    <span class="lev4">prototype</span>
+                    <span class="lev2">HTML5</span>
+                    <span class="lev5">grid</span>
+                    <span class="lev4">nodeJs</span>
+                    <span class="lev4">CSS3</span>
+                    <span class="lev3">JQuery</span>
+                    <span class="lev3">ECharts</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div class="footer-nav">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="blog.html">文章</a></li>
+                <li><a href="gallery.html">作品</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact main-center clearfix">
+            <ul>
+                <li class="title">学习资料</li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">Hover时样式</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+            </ul>
+            <ul>
+                <li class="title">友情链接</li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">Hover时样式</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+            </ul>
+            <ul>
+                <li class="title">学习资料</li>
+                <li>LINK</li>
+                <li><a href="#">Hover时样式</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+            </ul>
+            <ul>
+                <li class="title">学习资料</li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">Hover时样式</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+            </ul>
+            <ul class="last">
+                <li class="title">友情链接</li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">Hover时样式</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <div>版权信息</div>
+            <a href="http://www.github.com/codecly259">
+                <img src="./img/icon-github.png" alt="icon-github">
+            </a>
+        </div>
+    </div>
 
 </body>
 </html>
