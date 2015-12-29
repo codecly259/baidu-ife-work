@@ -2,32 +2,38 @@
  * Created by maxinchun on 2015/12/25.
  */
 
-//ÅĞ¶ÏarrÊÇ·ñÊÇÒ»¸öÊı×é£¬·µ»ØÒ»¸öboolÖµ
+// ---------------------------2.JavaScriptæ•°æ®ç±»å‹åŠè¯­è¨€åŸºç¡€------------------------------------------------
+
+// -----------------------------2.1å®è·µåˆ¤æ–­å„ç§æ•°æ®ç±»å‹çš„æ–¹æ³•------------------------------------------------
+
+//åˆ¤æ–­arræ˜¯å¦æ˜¯ä¸€ä¸ªæ•°ç»„ï¼Œè¿”å›ä¸€ä¸ªboolå€¼
 function isArray(arr) {
     //return Array.isArray(arr);
     return Object.prototype.toString.call(arr) === '[object Array]';
 }
 
-//ÅĞ¶ÏfnÊÇ·ñÎªÒ»¸öº¯Êı£¬·µ»ØÒ»¸öboolÖµ
+//åˆ¤æ–­fnæ˜¯å¦ä¸ºä¸€ä¸ªå‡½æ•°ï¼Œè¿”å›ä¸€ä¸ªboolå€¼
 function isFunction(fn) {
     //return typeof fn === "function";
     return Object.prototype.toString.call(fn) === '[object Function]';
 }
 
-// Ê¹ÓÃµİ¹éÀ´ÊµÏÖÒ»¸öÉî¶È¿ËÂ¡£¬¿ÉÒÔ¸´ÖÆÒ»¸öÄ¿±ê¶ÔÏó£¬·µ»ØÒ»¸öÍêÕû¿ËÂ¡
-// ±»¸´ÖÆµÄ¶ÔÏóÀàĞÍ»á±»ÏŞÖÆÎªÊı×Ö¡¢×Ö·û´®¡¢²¼¶û¡¢ÈÕÆÚ¡¢Êı×é¡¢Object¶ÔÏó¡£²»»á°üº¬º¯Êı¡¢ÕıÔò¶ÔÏóµÈ¡£
+// ------------------------2.2äº†è§£å€¼ç±»å‹å’Œå¼•ç”¨ç±»å‹çš„åŒºåˆ«ï¼Œäº†è§£å„ç§å¯¹è±¡çš„è¯»å–ã€éå†æ–¹å¼-------------------------------------
+
+// ä½¿ç”¨é€’å½’æ¥å®ç°ä¸€ä¸ªæ·±åº¦å…‹éš†ï¼Œå¯ä»¥å¤åˆ¶ä¸€ä¸ªç›®æ ‡å¯¹è±¡ï¼Œè¿”å›ä¸€ä¸ªå®Œæ•´å…‹éš†
+// è¢«å¤åˆ¶çš„å¯¹è±¡ç±»å‹ä¼šè¢«é™åˆ¶ä¸ºæ•°å­—ã€å­—ç¬¦ä¸²ã€å¸ƒå°”ã€æ—¥æœŸã€æ•°ç»„ã€Objectå¯¹è±¡ã€‚ä¸ä¼šåŒ…å«å‡½æ•°ã€æ­£åˆ™å¯¹è±¡ç­‰ã€‚
 function cloneObject(src) {
     var clone = src;
 
-    // ¶ÔÓÚDate String BooleanµÈÒıÓÃÀàĞÍµÄÊı¾İ£¬ĞèÒª¿¼ÂÇµ÷ÓÃ¹¹Ôìº¯ÊıÖØĞÂ¹¹Ôì£¬Ö±½Ó¸³ÖµÒÀÈ»»áÓĞÒıÓÃÎÊÌâ£¨²»ÊÇÕæÕıµÄcloneÒıÓÃ±äÁ¿£©
+    // å¯¹äºDate String Booleanç­‰å¼•ç”¨ç±»å‹çš„æ•°æ®ï¼Œéœ€è¦è€ƒè™‘è°ƒç”¨æ„é€ å‡½æ•°é‡æ–°æ„é€ ï¼Œç›´æ¥èµ‹å€¼ä¾ç„¶ä¼šæœ‰å¼•ç”¨é—®é¢˜ï¼ˆä¸æ˜¯çœŸæ­£çš„cloneå¼•ç”¨å˜é‡ï¼‰
 
-    //¶ÔÓÚDate
+    //å¯¹äºDate
     if (src instanceof Date) {
         clone = new Date(src.getDate());
     }
 
-    //¶ÔÓÚObjectºÍArrayµÄ±éÀú£¬¿ÉÒÔÊ¹ÓÃfor in ,ÕâÑù¿ÉÒÔ±£Ö¤ÔÚArray¶ÔÏóÉÏÀ©Õ¹µÄÊôĞÔÒ²¿ÉÒÔÕıÈ·¸´ÖÆ
-    //¶ÔÓÚÊı×é
+    //å¯¹äºObjectå’ŒArrayçš„éå†ï¼Œå¯ä»¥ä½¿ç”¨for in ,è¿™æ ·å¯ä»¥ä¿è¯åœ¨Arrayå¯¹è±¡ä¸Šæ‰©å±•çš„å±æ€§ä¹Ÿå¯ä»¥æ­£ç¡®å¤åˆ¶
+    //å¯¹äºæ•°ç»„
     if (src instanceof Array) {
         clone = [];
         for (var key in src) {
@@ -35,21 +41,21 @@ function cloneObject(src) {
         }
     }
 
-    //¶ÔÓÚObject
+    //å¯¹äºObject
     if (src instanceof Object) {
         clone = {};
         for (var key in src) {
-            if (src.hasOwnProperty(key)) {  //ºöÂÔµô¼Ì³ĞÊôĞÔ
+            if (src.hasOwnProperty(key)) {  //å¿½ç•¥æ‰ç»§æ‰¿å±æ€§
                 clone[key] = cloneObject(src[key]);
             }
         }
     }
 
-    //¶ÔÓÚÊı×Ö ×Ö·û´® ²¼¶û null undefined
+    //å¯¹äºæ•°å­— å­—ç¬¦ä¸² å¸ƒå°” null undefined
     return clone;
 }
 
-// ²âÊÔÓÃÀı£º
+// æµ‹è¯•ç”¨ä¾‹ï¼š
 var srcObj = {
     a: 1,
     b: {
@@ -69,8 +75,9 @@ console.log(srcObj.b.b1[0]);
 console.log(tarObj.a);
 console.log(tarObj.b.b1[0]);
 
+// -----------------2.3å­¦ä¹ æ•°ç»„ã€å­—ç¬¦ä¸²ã€æ•°å­—ç­‰ç›¸å…³æ–¹æ³•-------------------------------------
 
-//¶ÔÓÚÊı×é½øĞĞÈ¥ÖØ²Ù×÷£¬Ö»¿¼ÂÇÊı×éÖĞÔªËØÎªÊı×Ö»ò×Ö·û´®£¬·µ»ØÒ»¸öÈ¥ÖØµÄÊı×é
+//å¯¹äºæ•°ç»„è¿›è¡Œå»é‡æ“ä½œï¼Œåªè€ƒè™‘æ•°ç»„ä¸­å…ƒç´ ä¸ºæ•°å­—æˆ–å­—ç¬¦ä¸²ï¼Œè¿”å›ä¸€ä¸ªå»é‡çš„æ•°ç»„
 function uniqArray(arr) {
     var newArr = [];
     for (var i in arr) {
@@ -82,25 +89,25 @@ function uniqArray(arr) {
 
 }
 
-// Ê¹ÓÃÊ¾Àı£º
+// ä½¿ç”¨ç¤ºä¾‹ï¼š
 var a = [1, 3, 5, 7, 5, 3];
 var b = uniqArray(a);
 console.log(b);
 
-// ÊµÏÖÒ»¸ö¼òµ¥µÄtrimº¯Êı£¬ÓÃÓÚÈ¥³ıÒ»¸ö×Ö·û´®£¬Í·²¿ºÍÎ²²¿µÄ¿Õ°××Ö·û
-// ¼Ù¶¨¿Õ°××Ö·ûÖ»ÓĞ°ë½Ç¿Õ¸ñ¡¢Tab
-// Á·Ï°Í¨¹ıÑ­»·£¬ÒÔ¼°×Ö·û´®µÄÒ»Ğ©»ù±¾·½·¨£¬·Ö±ğÉ¨Ãè×Ö·û´®strÍ·²¿ºÍÎ²²¿ÊÇ·ñÓĞÁ¬ĞøµÄ¿Õ°××Ö·û£¬²¢ÇÒÉ¾µôËûÃÇ£¬×îºó·µ»ØÒ»¸öÍê³ÉÈ¥³ıµÄ×Ö·û´®
+// å®ç°ä¸€ä¸ªç®€å•çš„trimå‡½æ•°ï¼Œç”¨äºå»é™¤ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œå¤´éƒ¨å’Œå°¾éƒ¨çš„ç©ºç™½å­—ç¬¦
+// å‡å®šç©ºç™½å­—ç¬¦åªæœ‰åŠè§’ç©ºæ ¼ã€Tab
+// ç»ƒä¹ é€šè¿‡å¾ªç¯ï¼Œä»¥åŠå­—ç¬¦ä¸²çš„ä¸€äº›åŸºæœ¬æ–¹æ³•ï¼Œåˆ†åˆ«æ‰«æå­—ç¬¦ä¸²strå¤´éƒ¨å’Œå°¾éƒ¨æ˜¯å¦æœ‰è¿ç»­çš„ç©ºç™½å­—ç¬¦ï¼Œå¹¶ä¸”åˆ æ‰ä»–ä»¬ï¼Œæœ€åè¿”å›ä¸€ä¸ªå®Œæˆå»é™¤çš„å­—ç¬¦ä¸²
 function simpleTrim(str) {
     var i;
     var j;
-    for (i = 0; i < str.length; i++) { //´ÓÍ·¿ªÊ¼±éÀú×Ö·û´®
-        if (str[i] != " " && str[i] != "\t") {//µ±×Ö·û²»Îª¿ÕµÄÊ±ºò
+    for (i = 0; i < str.length; i++) { //ä»å¤´å¼€å§‹éå†å­—ç¬¦ä¸²
+        if (str[i] != " " && str[i] != "\t") {//å½“å­—ç¬¦ä¸ä¸ºç©ºçš„æ—¶å€™
             break;
         }
     }
 
-    for (j = str.length - 1; j >= 0; j--) { //´Ó×Ö·û´®Î²²¿±éÀú
-        if (str[j] != " " && str[j] != "\t") { //µ±×Ö·û²»Îª¿ÕµÄÊ±ºò
+    for (j = str.length - 1; j >= 0; j--) { //ä»å­—ç¬¦ä¸²å°¾éƒ¨éå†
+        if (str[j] != " " && str[j] != "\t") { //å½“å­—ç¬¦ä¸ä¸ºç©ºçš„æ—¶å€™
             break;
         }
     }
@@ -109,28 +116,28 @@ function simpleTrim(str) {
 
 }
 
-// ¶Ô×Ö·û´®Í·Î²½øĞĞ¿Õ¸ñ×Ö·û´®µÄÈ¥³ı¡¢°üÀ¨È«½Ç°ë½Ç¿Õ¸ñ¡¢TabµÈ£¬·µ»ØÒ»¸ö×Ö·û´®
-// ³¢ÊÔÊ¹ÓÃÒ»ĞĞ¼ò½àµÄÕıÔò±í´ïÊ½Íê³É¸ÃÌâÄ¿
+// å¯¹å­—ç¬¦ä¸²å¤´å°¾è¿›è¡Œç©ºæ ¼å­—ç¬¦ä¸²çš„å»é™¤ã€åŒ…æ‹¬å…¨è§’åŠè§’ç©ºæ ¼ã€Tabç­‰ï¼Œè¿”å›ä¸€ä¸ªå­—ç¬¦ä¸²
+// å°è¯•ä½¿ç”¨ä¸€è¡Œç®€æ´çš„æ­£åˆ™è¡¨è¾¾å¼å®Œæˆè¯¥é¢˜ç›®
 function trim(str) {
     if (str.length != -1) {
         return str.replace(/^\s+|\s+$/g, '');
     }
 }
 
-// Ê¹ÓÃÊ¾Àı
+// ä½¿ç”¨ç¤ºä¾‹
 var str = ' hi!  ';
 str = trim(str);
 console.log(str);  //'hi!'
 
-// ÊµÏÖÒ»¸ö±éÀúÊı×éµÄ·½·¨£¬Õë¶ÔÊı×éÖĞÃ¿Ò»¸öÔªËØÖ´ĞĞfnº¯Êı£¬²¢½«Êı×éË÷ÒıºÍÔªËØ×÷Îª²ÎÊı´«µİ
-// ÆäÖĞfnº¯Êı¿ÉÒÔ½ÓÊÜÁ½¸ö²ÎÊı£ºitemºÍindex
+// å®ç°ä¸€ä¸ªéå†æ•°ç»„çš„æ–¹æ³•ï¼Œé’ˆå¯¹æ•°ç»„ä¸­æ¯ä¸€ä¸ªå…ƒç´ æ‰§è¡Œfnå‡½æ•°ï¼Œå¹¶å°†æ•°ç»„ç´¢å¼•å’Œå…ƒç´ ä½œä¸ºå‚æ•°ä¼ é€’
+// å…¶ä¸­fnå‡½æ•°å¯ä»¥æ¥å—ä¸¤ä¸ªå‚æ•°ï¼šitemå’Œindex
 function each(arr, fn) {
     for (var i in arr) {
         fn(arr[i], i);
     }
 }
 
-// Ê¹ÓÃÊ¾Àı
+// ä½¿ç”¨ç¤ºä¾‹
 var arr = ['java', 'c', 'php', 'html'];
 function output(item, index) {
     console.log(index + ':' + item);
@@ -139,7 +146,7 @@ function output(item, index) {
 each(arr, output); // 0:java, 1:c, 2:php, 3:html
 
 
-// »ñÈ¡Ò»¸ö¶ÔÏóÀïÃæµÚÒ»²ãÔªËØµÄÊıÁ¿£¬·µ»ØÒ»¸öÕûÊı
+// è·å–ä¸€ä¸ªå¯¹è±¡é‡Œé¢ç¬¬ä¸€å±‚å…ƒç´ çš„æ•°é‡ï¼Œè¿”å›ä¸€ä¸ªæ•´æ•°
 function getObjectLength(obj) {
     var length = 0;
     for (var key in obj) {
@@ -150,7 +157,7 @@ function getObjectLength(obj) {
     return length;
 }
 
-// Ê¹ÓÃÊ¾Àı
+// ä½¿ç”¨ç¤ºä¾‹
 var obj = {
     a: 1,
     b: 2,
@@ -158,9 +165,352 @@ var obj = {
         c1: 3,
         c2: 4
     }
-}
+};
 console.log(getObjectLength(obj));
 
+// ---------------------2.4å­¦ä¹ æ­£åˆ™è¡¨è¾¾å¼-----------------------------------------------------------------------
+
+// åˆ¤æ–­æ˜¯å¦ä¸ºé‚®ç®±åœ°å€
+function isEmail(emailStr) {
+    //var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/
+    var reg = /^[a-z0-9]([-_\.]?[a-z0-9]+)*@([-_]?[a-z0-9]+)+[\.][a-z]{2,7}([\.][a-z]{2})?$/i;
+    return reg.test(emailStr);
+}
+
+// åˆ¤æ–­æ˜¯å¦ä¸ºæ‰‹æœºå·ç 
+function isMobilePhone(phone) {
+    var reg = /^1[3|4|5|8]\d{9}/;
+    return reg.test(phone);
+}
+
+var email = "23@123.com";
+var phone = 15212359645;
+console.log(isEmail(email));
+console.log(isEmail(phone));
+console.log(isMobilePhone(email));
+console.log(isMobilePhone(phone));
+
+
+// -----------------------------------------3.DOM----------------------------------------------------------
+
+// ---------------------------3.1ç®€å•çš„DOMæ“ä½œå‡½æ•°-----------------------------------------------------
+
+// ä¸ºelementå¢åŠ ä¸€ä¸ªæ ·å¼åä¸ºnewClassNameçš„æ–°æ ·å¼
+function addClass(element, newClassName) {
+    var oldClassName = element.className;
+    element.className = oldClassName === "" ? newClassName : oldClassName + " " + newClassName;
+}
+
+// ç§»é™¤elementä¸­çš„æ ·å¼oldClassName
+function removeClass(element, oldClassName) {
+    var originClassName = element.className; //è·å–åŸå…ˆçš„æ ·å¼ç±»
+    var pattern = new Regexp("\\b" + oldClassName + "\\b"); //ä½¿ç”¨æ„é€ å‡½æ•°æ„é€ åŠ¨æ€çš„æ­£åˆ™è¡¨è¾¾å¼
+    element.className = trim(originClassName.replace(pattern, ""));
+}
+
+// åˆ¤æ–­siblingNodeå’Œelementæ˜¯å¦ä¸ºåŒä¸€ä¸ªçˆ¶å…ƒç´ ä¸‹çš„åŒä¸€åŠçš„å…ƒç´ ï¼Œè¿”å›boolå€¼ã€
+function isSiblingNode(element, siblingNode) {
+    return element.parentNode === siblingNode.parentNode;
+}
+
+// è·å–elementç›¸å¯¹äºæµè§ˆå™¨çª—å£çš„ä½ç½®ï¼Œè¿”å›ä¸€ä¸ªå¯¹è±¡{x, y}
+//TODO ä¸å¤Ÿå®Œå–„,æµè§ˆå™¨çš„é«˜åº¦å’Œ
+function getPosition(element) {
+    var pos = {};
+    pos.x = element.getBoundingClientRect().left + Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
+    pos.y = element.getBoundingClientRect().top + Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+    return pos;
+}
+
+// ----------------------------------------------------------------------------------------------
+
+// å®ç°ä¸€ä¸ªç®€å•çš„Query
+function $(selector) {
+    var element = document;
+    var sele = selector.replace(/\s+/, ' ').split(' '); //å»é™¤å¤šä½™çš„ç©ºæ ¼å¹¶åˆ†å‰²
+    for (var i in sele) {
+        switch (sele[i][0]) { // ä»å­èŠ‚ç‚¹ä¸­æŸ¥æ‰¾
+            case '#' : // idé€‰æ‹©
+                element = element.getElementById(sele[i].substring(1));
+                break; //
+            case '.' :
+                element = element.getElementsByClassName(sele[i].substring(1))[0];
+                break;
+            case '[' : // å±æ€§é€‰æ‹©
+                var valueLoc = sele[i].indexOf('=');
+                var temp = element.getElementsByTagName('*');
+                var tLength = temp.length;
+                if (valueLoc != -1) { // æ—¢æœ‰å±æ€§ï¼Œä¹Ÿæœ‰å€¼
+                    var key = sele[i].substring(1, valueLoc);
+                    var value = sele[i].substring(valueLoc + 1, sele[i].length - 1);
+                    for (var j in temp) {
+                        if (temp[j][key] == value) {
+                            element = temp[j];
+                        }
+                    }
+                } else { //åªæœ‰å±æ€§ æ²¡æœ‰å€¼
+                    var key = sele[i].substring(1, sele[i].length - 1);
+                    for (var j in temp) {
+                        if (temp[j][key]) {
+                            element = temp[j];
+                            break;
+                        }
+                    }
+                }
+                break;
+            default :
+                element = element.getElementsByTagName(sele[i][0]);
+        }
+    }
+    if (!element) {
+        element = null;
+    }
+    return element;
+}
+
+// å¯ä»¥é€šè¿‡idè·å–DOMå¯¹è±¡ï¼Œé€šè¿‡#æ ‡ç¤ºï¼Œä¾‹å¦‚
+$("#adom"); // è¿”å›idä¸ºadomçš„DOMå¯¹è±¡
+
+// å¯ä»¥é€šè¿‡tagNameè·å–DOMå¯¹è±¡,ä¾‹å¦‚
+$("a") // è¿”å›ç¬¬ä¸€ä¸ª<a>å¯¹è±¡
+
+// å¯ä»¥é€šè¿‡æ ·å¼åç§°è·å–DOMå¯¹è±¡,ä¾‹å¦‚
+$(".classa"); //è¿”å›ç¬¬ä¸€ä¸ªæ ·å¼å®šä¹‰åŒ…å«classaçš„å¯¹è±¡
+
+// å¯ä»¥é€šè¿‡attributeåŒ¹é…è·å–DOMå¯¹è±¡,ä¾‹å¦‚
+$("[data-log]"); // è¿”å›ç¬¬ä¸€ä¸ªåŒ…å«å±æ€§data-logçš„å¯¹è±¡
+
+$("[data-time=2015]"); //è¿”å›ç¬¬ä¸€ä¸ªåŒ…å«å±æ€§data-timeä¸”å€¼ä¸º2015çš„å¯¹è±¡
+
+// å¯ä»¥é€šè¿‡ç®€å•çš„ç»„åˆæé«˜æŸ¥è¯¢ä¾¿åˆ©æ€§,ä¾‹å¦‚
+$("#adom .classa"); //è¿”å›idä¸ºadomçš„DOMæ‰€åŒ…å«çš„æ‰€æœ‰å­èŠ‚ç‚¹ä¸­ï¼Œç¬¬ä¸€ä¸ªæ ·å¼å®šä¹‰åŒ…å«classaçš„å¯¹è±¡
+
+
+// ------------------------------äº‹ä»¶å¤„ç†å‡½æ•°---------------------------------------------------------------
+
+// ç»™ä¸€ä¸ªelementç»‘å®šä¸€ä¸ªé’ˆå¯¹eventäº‹ä»¶çš„å“åº”ï¼Œå“åº”å‡½æ•°ä¸ºlistener
+function addEvent(element, event, listener) {
+    element.addEventListener(event, listener);
+}
+
+// ä¾‹å¦‚ï¼š
+function clicklistener(event) {
+    // ...
+}
+addEvent($("#doma"), "click", clicklistener);
+
+// ç§»é™¤elementå¯¹è±¡å¯¹äºeventäº‹ä»¶å‘ç”Ÿæ—¶æ‰§è¡Œlistenerçš„å“åº”
+function removeEvent(element, event, listener) {
+    element.removeEventListener(event, listener);
+}
+
+// å®ç°å¯¹clickäº‹ä»¶çš„ç»‘å®š
+function addClickEvent(element, listener) {
+    addEvent(element, 'click', listener);
+}
+
+// å®ç°å¯¹Enteré”®æ—¶çš„äº‹ä»¶ç»‘å®š
+function addEnterEvent(element, listener) {
+    addEvent(element, 'keydown', function (e) {
+        var event = e || window.event;
+        var keyCode = event.which || event.keyCode;
+        if (keyCode == 13) {
+            listener.call(element, event);
+        }
+    });
+}
+
+
+// æ¥ä¸‹æ¥æˆ‘ä»¬æŠŠä¸Šé¢å‡ ä¸ªå‡½æ•°å’Œ$åšä¸€ä¸‹ç»“åˆï¼Œå½“å®ƒä»¬å˜æˆ$å¯¹è±¡çš„ä¸€äº›æ–¹æ³•
+$.on = addEvent;
+$.un = removeEvent;
+$.click = addClickEvent;
+$.enter = addEnterEvent;
+
+
+function clickListener(event) {
+    console.log(event);
+}
+
+function renderList() {
+    $("#list").innerHTML = "<li>new item</li>";
+}
+
+function init() {
+    each($("#list").getElementsByTagName("li"), function (item) {
+        $.click(item, clickListener);
+    });
+    $.click($("#btn"), renderList);
+}
+
+init();
+
+
+//-------------------------------------äº‹ä»¶ä»£ç†-------------------------------------------------
+
+// å…ˆç®€å•ä¸€äº›
+function delegateEvent(element, tag, eventName, listener) {
+    addEvent(element, eventName, function (e) {
+        var event = e || window.event;
+        var target = event.target || event.srcElement;
+        if (target && target.tagName === tag.toUpperCase()) {
+            listener.call(target, event);
+        }
+    });
+}
+
+$.delegate = delegateEvent;
+
+// ä½¿ç”¨ç¤ºä¾‹
+// è¿˜æ˜¯ä¸Šé¢é‚£æ®µHTMLï¼Œå®ç°å¯¹listè¿™ä¸ªulé‡Œé¢æ‰€æœ‰liçš„clickäº‹ä»¶è¿›è¡Œå“åº”
+$.deletate($("#list"), "li", "click", clickListener);
+
+
+// ------------------------------------5.BOM---------------------------------------------------
+
+// åˆ¤æ–­æ˜¯å¦ä¸ºIEæµè§ˆå™¨ï¼Œè¿”å›-1æˆ–è€…ç‰ˆæœ¬å·
+function isIE() {
+    // Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; .NET4.0E; .NET4.0C; Tablet PC 2.0; .NET CLR 3.5.30729; .NET CLR 2.0.50727; .NET CLR 3.0.30729; McAfee; InfoPath.2; LCJB; rv:11.0) like Gecko
+    if (navigator.userAgent.toLowerCase().indexOf("trident") > -1 && navigator.userAgent.indexOf("rv") > -1) { // ie11åŠä»¥ä¸Š
+        return navigator.userAgent.substring(navigator.userAgent.indexOf("rv:") + 3, navigator.userAgent.indexOf(")"));
+    } else {
+        return /msie (\d+\.\d+)/i.test(navigator.userAgent) ? (document.documentMode || +RegExp['\x241']) : -1;
+    }
+}
+
+function isValidCookieName(cookieName) {
+    // http://www.w3.org/Protocols/rfc2109/rfc2109
+    // Syntax:  General
+    // The two state management headers, Set-Cookie and Cookie, have common
+    // syntactic properties involving attribute-value pairs.  The following
+    // grammar uses the notation, and tokens DIGIT (decimal digits) and
+    // token (informally, a sequence of non-special, non-white space
+    // characters) from the HTTP/1.1 specification [RFC 2068] to describe
+    // their syntax.
+    // av-pairs   = av-pair *(";" av-pair)
+    // av-pair    = attr ["=" value] ; optional value
+    // attr       = token
+    // value      = word
+    // word       = token | quoted-string
+
+    // http://www.ietf.org/rfc/rfc2068.txt
+    // token      = 1*<any CHAR except CTLs or tspecials>
+    // CHAR       = <any US-ASCII character (octets 0 - 127)>
+    // CTL        = <any US-ASCII control character
+    //              (octets 0 - 31) and DEL (127)>
+    // tspecials  = "(" | ")" | "<" | ">" | "@"
+    //              | "," | ";" | ":" | "\" | <">
+    //              | "/" | "[" | "]" | "?" | "="
+    //              | "{" | "}" | SP | HT
+    // SP         = <US-ASCII SP, space (32)>
+    // HT         = <US-ASCII HT, horizontal-tab (9)>
+
+    return (new RegExp('^[^\\x20\\x7f\\(||)<>@,;:\\\\\\"\\[\\]\\?=\\{\\}\\/\\u0080-\\uffff]+x24')).test(cookieName);
+}
+
+// è®¾ç½®cookie
+function setCookie(cookieName, cookieValue, expiredays) {
+    if (!isValidCookieName(cookieName)) {
+        return;
+    }
+    var exdate = ''; //è¿‡æœŸæ—¶é—´
+    if (expiredays) {
+        exdate = new Date();
+        exdate.setDate(exdate.getDate() + expiredays);
+        // toGMTString is deprecated and should no longer be used, it's only there for backwards compatibility, use toUTCString() instead
+        var expires = ';expires=' + exdate.toUTCString();
+    }
+    // åºŸå¼ƒescape()æ–¹æ³•ç”Ÿæˆæ–°çš„ç”±åå…­è¿›åˆ¶è½¬ç§»åºåˆ—æ›¿æ¢çš„å­—ç¬¦ä¸²ï¼Œä½¿ç”¨encodeURIæˆ–encodeURIComponentä»£æ›¿
+    document.cookie = cookieName + '=' + encodeURIComponent(cookieValue) + expires;
+}
+
+function getCookie(cookieName) {
+    if (!isValidCookieName(cookieName)) {
+        return null;
+    }
+    var re = new RegExp(cookieName = '=(.*?)($|;)');
+    return re.exec(document.cookie)[1] || null;
+}
+
+// -------------------------------------------------6.Ajax---------------------------------------------------------
+
+// -------------------------å­¦ä¹ Ajax,å¹¶å°è¯•è‡ªå·±å°è£…ä¸€ä¸ªAjaxæ–¹æ³•ã€‚å®ç°å¦‚ä¸‹æ–¹æ³•---------------------------------------------
+// optionsæ˜¯ä¸€ä¸ªå¯¹è±¡,é‡Œé¢å¯ä»¥åŒ…æ‹¬çš„å‚æ•°ä¸ºï¼š
+// 1. type: postæˆ–è€…getï¼Œå¯ä»¥æœ‰ä¸€ä¸ªé»˜è®¤å€¼
+// 2. data: å‘é€çš„æ•°æ®ï¼Œä¸ºä¸€ä¸ªé”®å€¼å¯¹è±¡æˆ–è€…ä¸€ä¸ªç”¨&è¿æ¥çš„èµ‹å€¼å­—ç¬¦ä¸²
+// 3. onsuccess: æˆåŠŸæ—¶çš„è°ƒç”¨å‡½æ•°
+// 4. onfail: å¤±è´¥æ—¶çš„è°ƒç”¨å‡½æ•°
+function ajax(url, options) {
+    // åˆ›å»ºå¯¹è±¡
+    var xmlhttp;
+    if (window.XMLHttpRequest) { //code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else { // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    //å¤„ç†data
+    if (options.data) {
+        var dataArr = [];
+        for (var item in options.data) {
+            dataArr.push(item + "=" + encodeURI(options.data[item]));
+        }
+        var data = dataArr.join("&");
+    }
+
+    //å¤„ç†type
+    if (!options.type) {
+        options.type = "GET";
+    }
+    options.type = options.type.toUpperCase();
+
+    //å‘é€è¯·æ±‚
+    if (options.type == "GET") {
+        var myUrl = "";
+        if (options.data) {
+            myUrl = url + "?" + data;
+        } else {
+            myUrl = url;
+        }
+        xmlhttp.open("GET", myUrl, true);
+        xmlhttp.send();
+    } else if (options.type == "POST") {
+        xmlhttp.open("OPST", url, true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencodeed");
+        xmlhttp.send(data);
+    }
+
+    // å“åº”å¤„ç†
+    xmlhttp.onreadystatechange = function () {
+        // è¯·æ±‚æ•°æ®æˆåŠŸå“åº”
+        if (xmlhttp.readyState ==4 && xmlhttp.status == 200) {
+            if(data.onsuccess){
+                data.onsuccess(xmlhttp.responseText,xmlhttp.responseXML);
+            }
+        }else{
+            if(data.onfail){
+                data.onfail(xmlhttp.responseType,xmlhttp.responseXML);
+            }
+
+        }
+    }
+
+
+}
+
+// ä½¿ç”¨ç¤ºä¾‹ï¼š
+ajax(
+    'http://localhost:8080/server/ajaxtest',
+    {
+        data: {
+            name: 'simon',
+            password: '123456'
+        },
+        onsuccess: function (responseText, xhr) {
+            console.log(responseText);
+        }
+    }
+);
 
 
 
