@@ -56,7 +56,7 @@ function cloneObject(src) {
 }
 
 // 测试用例：
-var srcObj = {
+/*var srcObj = {
     a: 1,
     b: {
         b1: ["hello", "hi"],
@@ -73,7 +73,7 @@ console.log(srcObj.a);
 console.log(srcObj.b.b1[0]);
 
 console.log(tarObj.a);
-console.log(tarObj.b.b1[0]);
+console.log(tarObj.b.b1[0]);*/
 
 // -----------------2.3学习数组、字符串、数字等相关方法-------------------------------------
 
@@ -90,9 +90,9 @@ function uniqArray(arr) {
 }
 
 // 使用示例：
-var a = [1, 3, 5, 7, 5, 3];
+/*var a = [1, 3, 5, 7, 5, 3];
 var b = uniqArray(a);
-console.log(b);
+console.log(b);*/
 
 // 实现一个简单的trim函数，用于去除一个字符串，头部和尾部的空白字符
 // 假定空白字符只有半角空格、Tab
@@ -125,9 +125,9 @@ function trim(str) {
 }
 
 // 使用示例
-var str = ' hi!  ';
+/*var str = ' hi!  ';
 str = trim(str);
-console.log(str);  //'hi!'
+console.log(str);  //'hi!'*/
 
 // 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 // 其中fn函数可以接受两个参数：item和index
@@ -138,12 +138,12 @@ function each(arr, fn) {
 }
 
 // 使用示例
-var arr = ['java', 'c', 'php', 'html'];
+/*var arr = ['java', 'c', 'php', 'html'];
 function output(item, index) {
     console.log(index + ':' + item);
 }
 
-each(arr, output); // 0:java, 1:c, 2:php, 3:html
+each(arr, output); // 0:java, 1:c, 2:php, 3:html*/
 
 
 // 获取一个对象里面第一层元素的数量，返回一个整数
@@ -158,7 +158,7 @@ function getObjectLength(obj) {
 }
 
 // 使用示例
-var obj = {
+/*var obj = {
     a: 1,
     b: 2,
     c: {
@@ -166,7 +166,7 @@ var obj = {
         c2: 4
     }
 };
-console.log(getObjectLength(obj));
+console.log(getObjectLength(obj));*/
 
 // ---------------------2.4学习正则表达式-----------------------------------------------------------------------
 
@@ -183,12 +183,12 @@ function isMobilePhone(phone) {
     return reg.test(phone);
 }
 
-var email = "23@123.com";
+/*var email = "23@123.com";
 var phone = 15212359645;
 console.log(isEmail(email));
 console.log(isEmail(phone));
 console.log(isMobilePhone(email));
-console.log(isMobilePhone(phone));
+console.log(isMobilePhone(phone));*/
 
 
 // -----------------------------------------3.DOM----------------------------------------------------------
@@ -269,6 +269,7 @@ function $(selector) {
 }
 
 // 可以通过id获取DOM对象，通过#标示，例如
+/*
 $("#adom"); // 返回id为adom的DOM对象
 
 // 可以通过tagName获取DOM对象,例如
@@ -284,6 +285,7 @@ $("[data-time=2015]"); //返回第一个包含属性data-time且值为2015的对
 
 // 可以通过简单的组合提高查询便利性,例如
 $("#adom .classa"); //返回id为adom的DOM所包含的所有子节点中，第一个样式定义包含classa的对象
+*/
 
 
 // ------------------------------事件处理函数---------------------------------------------------------------
@@ -328,7 +330,7 @@ $.click = addClickEvent;
 $.enter = addEnterEvent;
 
 
-function clickListener(event) {
+/*function clickListener(event) {
     console.log(event);
 }
 
@@ -343,7 +345,7 @@ function init() {
     $.click($("#btn"), renderList);
 }
 
-init();
+init();*/
 
 
 //-------------------------------------事件代理-------------------------------------------------
@@ -363,7 +365,7 @@ $.delegate = delegateEvent;
 
 // 使用示例
 // 还是上面那段HTML，实现对list这个ul里面所有li的click事件进行响应
-$.deletate($("#list"), "li", "click", clickListener);
+/*$.deletate($("#list"), "li", "click", clickListener);*/
 
 
 // ------------------------------------5.BOM---------------------------------------------------
@@ -499,7 +501,7 @@ function ajax(url, options) {
 }
 
 // 使用示例：
-ajax(
+/*ajax(
     'http://localhost:8080/server/ajaxtest',
     {
         data: {
@@ -510,7 +512,7 @@ ajax(
             console.log(responseText);
         }
     }
-);
+);*/
 
 
 
