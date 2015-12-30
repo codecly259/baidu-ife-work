@@ -57,9 +57,3 @@ function reset() {
     removeNode($(".result"));
 
 }
-
-function removeNode(node) {
-    if (node) {
-        node.parentNode.removeChild(node);
-    }
-}

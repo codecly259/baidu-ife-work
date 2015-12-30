@@ -516,3 +516,8 @@ function ajax(url, options) {
 
 
 
+function removeNode(node) {
+    if (node) {
+        node.parentNode.removeChild(node);
+    }
+}
