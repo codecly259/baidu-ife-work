@@ -16,11 +16,35 @@
 -->
 <div class="center">
     <h2>小练习3</h2>
-    <div class="list" style="left: -600px;">
-
+    <div class="container">
+        <div class="list" style="left: -600px;">
+            <img src="./img/slide-6.png" alt="1">
+            <img src="./img/slide-1.png" alt="1">
+            <img src="./img/slide-2.png" alt="2">
+            <img src="./img/slide-3.png" alt="3">
+            <img src="./img/slide-4.png" alt="4">
+            <img src="./img/slide-5.png" alt="5">
+            <img src="./img/slide-6.png" alt="6">
+            <img src="./img/slide-1.png" alt="6">
+        </div>
+        <ol class="button" id="lightButton">
+            <li class="light" index="0"></li>
+            <li index="1"></li>
+            <li index="2"></li>
+            <li index="3"></li>
+            <li index="4"></li>
+            <li index="5"></li>
+        </ol>
+        <a id="prev"></a>
+        <a id="next"></a>
+    </div>
+    <div class="deal">
+        <button onclick="playASC();">正序</button>
+        <button onclick="playDESC();">逆序</button>
+        <button onclick="stop();">停止</button>
+        <div class="error"></div>
     </div>
 </div>
-
 
 
 <script type="text/javascript" src="./js/util.js"></script>

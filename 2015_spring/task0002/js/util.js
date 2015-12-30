@@ -204,7 +204,7 @@ function addClass(element, newClassName) {
 // 移除element中的样式oldClassName
 function removeClass(element, oldClassName) {
     var originClassName = element.className; //获取原先的样式类
-    var pattern = new Regexp("\\b" + oldClassName + "\\b"); //使用构造函数构造动态的正则表达式
+    var pattern = new RegExp("\\b" + oldClassName + "\\b"); //使用构造函数构造动态的正则表达式
     element.className = trim(originClassName.replace(pattern, ""));
 }
 

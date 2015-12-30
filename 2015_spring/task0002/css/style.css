@@ -4,6 +4,17 @@
     font-family: Microsoft YaHei, sans-serif;
 }
 
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 body {
     min-width: 980px;
     background: #e2e2e2;
@@ -36,12 +47,14 @@ body {
     outline: none;
     margin-right: 10px;
 }
+
 .deal button:hover {
-    background-color:#f6f6f6;
+    background-color: #f6f6f6;
 }
+
 .deal button:active {
-    position:relative;
-    top:1px;
+    position: relative;
+    top: 1px;
 }
 
 .error {
@@ -55,8 +68,8 @@ body {
     margin-bottom: 10px;
 }
 
-.reuslt {
-    word-spacing:25px;
+.result {
+    word-spacing: 25px;
 }
 
 .myText {
@@ -79,4 +92,64 @@ body {
 
 .myText:focus {
     border: 1px solid #4d90fe;
+}
+
+/* task0002_3 */
+.container {
+    width: 600px;
+    height: 375px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #000;
+}
+
+.list {
+    position: absolute;
+    width: 12000px;
+    z-index: 1;
+}
+
+.list img {
+    width: 600px;
+    float: left;
+}
+
+.button {
+    position: absolute;
+    bottom: 20px;
+    left: 250px;
+    z-index: 2;
+}
+
+.button li {
+    cursor: pointer;
+    float: left;
+    border: 1px solid #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #333;
+    margin-right: 5px;
+}
+
+.button .light {
+    background: #0f0;
+}
+
+.arrow {
+    position: absolute;
+    cursor: pointer;
+    float: left;
+    width: 150px;
+    height: 375px;
+    z-index: 2;
+    corlor: #000;
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
 }
