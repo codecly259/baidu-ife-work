@@ -486,12 +486,12 @@ function ajax(url, options) {
     xmlhttp.onreadystatechange = function () {
         // 请求数据成功响应
         if (xmlhttp.readyState ==4 && xmlhttp.status == 200) {
-            if(data.onsuccess){
-                data.onsuccess(xmlhttp.responseText,xmlhttp.responseXML);
+            if(options.data.onsuccess){
+                options.data.onsuccess(xmlhttp.responseText,xmlhttp.responseXML);
             }
         }else{
-            if(data.onfail){
-                data.onfail(xmlhttp.responseType,xmlhttp.responseXML);
+            if(options.data.onfail){
+                options.data.onfail(xmlhttp.responseType,xmlhttp.responseXML);
             }
 
         }

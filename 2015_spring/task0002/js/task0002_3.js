@@ -68,8 +68,8 @@ window.onload = function () {
         }
     });
 
-    playDESC();
-    //playASC();
+    //playDESC();
+    playASC();
 };
 
 var timer;
