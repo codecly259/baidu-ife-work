@@ -77,11 +77,11 @@ console.log(tarObj.b.b1[0]);*/
 
 // -----------------2.3学习数组、字符串、数字等相关方法-------------------------------------
 
-//对于数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重的数组
+//对于数组进行去重操作，并去空，只考虑数组中元素为数字或字符串，返回一个去重的数组
 function uniqArray(arr) {
     var newArr = [];
     for (var i in arr) {
-        if (newArr.indexOf(arr[i]) == -1) {
+        if (newArr.indexOf(arr[i]) == -1 && arr[i] != "") {
             newArr.push(arr[i]);
         }
     }
@@ -259,7 +259,7 @@ function $(selector) {
                 }
                 break;
             default :
-                element = element.getElementsByTagName(sele[i][0]);
+                element = element.getElementsByTagName(sele[i])[0];
         }
     }
     if (!element) {
@@ -296,10 +296,10 @@ function addEvent(element, event, listener) {
 }
 
 // 例如：
-function clicklistener(event) {
+/*function clicklistener(event) {
     // ...
 }
-addEvent($("#doma"), "click", clicklistener);
+addEvent($("#doma"), "click", clicklistener);*/
 
 // 移除element对象对于event事件发生时执行listener的响应
 function removeEvent(element, event, listener) {
