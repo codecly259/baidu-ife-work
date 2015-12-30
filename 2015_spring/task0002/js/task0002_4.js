@@ -14,7 +14,7 @@ var word = $('.prompt-wrap').getElementsByTagName('li');
 var result = [];
 
 window.onload = function () {
-    for (var i in word) {
+    for (var i = 0; i < word.length; i++) {
         $.click(word[i], function () { // 鼠标事件(点击 移进 移开)
             myText.value = this.innerHTML;
             clear();
@@ -53,16 +53,12 @@ function showHint(value, e) {
                         if (responseText) {
                             promptWrap.style.display = 'block';
                             result = responseText.replace(/\s+/g, '').split(',');
-                            console.info(result);
-                            for (var i in result) {
+                            for (var i = 0; i < result.length; i++) {
                                 word[i + 1].innerHTML = result[i];
                             }
                         } else {
                             promptWrap.style.display = 'none';
                         }
-                    },
-                    onfail: function (responseTex, xhr) {
-                        console.info(responseTex);
                     }
                 }
             }
