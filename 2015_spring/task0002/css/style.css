@@ -182,3 +182,47 @@ body {
     background-color: #eee;
 }
 
+/* task0002_5 */
+.drag-container {
+    height: 425px;
+    margin-top: 20px;
+}
+
+.drag-wrap {
+    width: 150px;
+    height: 450px;
+    background: #92c0ef;
+    margin-right: 160px;
+    float: left;
+    border: 1px solid #000;
+    position: relative;
+}
+
+.drag {
+    width: 150px;
+    height: 40px;
+    background: #47456d;
+    margin: -1px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    cursor: move;
+    position: absolute;
+    left: 0;
+}
+
+.dragging {
+    visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
