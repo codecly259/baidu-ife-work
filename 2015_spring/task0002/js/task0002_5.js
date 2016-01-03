@@ -34,18 +34,18 @@ function moveDrag(element, move) {
 }
 
 /**
- *
+ * 计算滑块降落的位置
  * @param event
  * @returns {Array}
  */
 function getLocation(event) {
-    var location = [];
-    var moveX = event.clientX - startX;
+    var location = []; // location的第一个元素代表容器的序号，第二个元素代表滑块在容器中的序号
+    var moveX = event.clientX - startX; // 计划滑块中心的位置
     var moveY = event.clientY - startY;
     var x = startLeft + moveX;
     var y = startTop + moveY;
 
-    if (x < 20) {
+    if (x < 20) { // 容器的序号
         location[0] = 0;
     } else if (x >= 230 && x <= 540) {
         location[0] = 1;
@@ -53,7 +53,7 @@ function getLocation(event) {
         location[0] = 2;
     }
 
-    location[1] = Math.floor((y + 20) / 40);
+    location[1] = Math.floor((y + 20) / 40); // 滑块在容器中的序号
     var dragNum = wrap(location[0].getElementsByClassName('drag').length); //容器中滑块的数量
     location[1] = Math.max(location[1], 1);
     location[1] = Math.min(location[1], dragNum);
