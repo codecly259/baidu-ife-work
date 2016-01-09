@@ -138,12 +138,12 @@ window.onload = function () {
         drag[i].draggable = true;
         drag[i].style.top = (i % 6 * 41) + 'px';
 
-        $.on(document.body, 'dragstart', dragStart);
-        $.on(document.body, 'drag', dragging);
+        $.on(drag[i], 'dragstart', dragStart);
+        $.on(drag[i], 'drag', dragging);
     }
 
-    $.on(document.body, 'dragover', dragOver);
-    $.on(document.body, 'drop', drop)
+    $.on(document.body, 'dragOver', dragOver);
+    $.on(document.body, 'drop', drop);
 }
 
 
