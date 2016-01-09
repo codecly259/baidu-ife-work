@@ -60,3 +60,95 @@ function getLocation(event) {
 
     return location;
 }
+
+/**
+ * 事件函数，开始拖动，整理原容器的其他滑块及记录一些数据
+ * @param e
+ */
+function dragStart(e) {
+    // 计算滑块中心相对drag-container的位置
+    var wrapLeft = $('.drag-container').offsetLeft;
+    e = e || window.event;
+    var parent = this.parentNode;
+    // 记录鼠标位置
+    startX = e.clientX;
+    startY = e.clientY;
+    // 滑块中心相对容器的位置
+    startTop = parseInt(this.style.top) + 20;
+    startLeft = parent.offsetLeft - wrapLeft + 75;
+    this.style.zindex = 1;
+    // 下面的滑块上移41个像素
+    moveDrag(nextDrag(this), -41);
+}
+
+/**
+ * 拖动中，避免浏览器对容器的默认处理（默认无法将数据/元素放置到其他元素中）
+ * @param e
+ */
+function dragging(e) {
+    if (this.className !== 'dragging') {
+        this.className = 'dragging';
+    }
+}
+
+/**
+ * 拖动中，避免浏览器对容器的默认处理（默认无法将数据/元素放置到其他元素中）
+ * @param e
+ */
+function dragOver(e){
+    e.preventDefault();
+}
+
+/**
+ * 拖动结束，将滑块添加到新的容器
+ * @param e
+ */
+function drop(e) {
+    e = e || window.event;
+    // 避免浏览器对容器的默认处理（默认已链接方式打开）
+    e.preventDefault();
+    // 滑块降落的位置
+    var location = getLocation(e);
+    var myWrap = wrap[location[0]];
+    var myDrag = myWrap.getElementsByClassName('drag')[location[1]];
+    if (myDrag) {
+        var myTop = myDrag.style.top;
+    } else {
+        var beforeDrag = myWrap.getElementsByClassName('drag')[location[1] - 1];
+        if (beforeDrag) {
+            var beforeTop = parseInt(beforeDrag.style.top);
+        } else {
+            var beforeTop = -41;
+        }
+        var myTop = beforeTop + 41 + 'px';
+    }
+    moveDrag(myDrag, 41);
+
+    // 将被拖动的滑块添加到新容器中
+    var block = document.getElementsByClassName('drag');
+    block.style.top = myTop;
+    block.style.zIndex = 0;
+    block.className = 'drag';
+    myWrap.insertBefore(block, myDrag);
+}
+
+window.onload = function () {
+    var drag = document.getElementsByClassName('drag');
+    for (var i = 0; i < drag.length; i++) {
+        drag[i].draggable = true;
+        drag[i].style.top = (i % 6 * 41) + 'px';
+
+        $.on(document.body, 'dragstart', dragStart);
+        $.on(document.body, 'drag', dragging);
+    }
+
+    $.on(document.body, 'dragover', dragOver);
+    $.on(document.body, 'drop', drop)
+}
+
+
+
+
+
+
+
