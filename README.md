@@ -11,4 +11,4 @@
 
 - [网页地址](http://ife.baidu.com/) : 主要是对学院的介绍
 - [github地址](https://github.com/baidu-ife/ife) : 各期学习的任务描述及学习资料地址
-- [2016年春季(第三期)任务地址](http://ife.baidu.com/task/all) : 第三期的任务就没有放在github上
+- [2016年春季(第三期)任务地址](http://ife.baidu.com/task/all) : 第三期的任务就没有放在github上了
